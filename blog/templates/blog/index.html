@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}All Blocks{% endblock %}
+{% block css_link %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+{% block content %}
+
+
+<section id = "welcome">
+    <header>
+        <img src = "{% static "blog/images/blog.jpg" %}" alt = " some blog image ">
+        <h2>My blog</h2>
+    </header>
+    <p>Hai, This is blog page just built to learn Django</p>
+</section>
+
+<section id = "latest-posts">
+    <h2>My latest Thoughts</h2>
+
+    <ul>
+        {% include "blog/includes/post.html" %}
+    </ul>
+
+</section>
+
+<section id="about">
+    <h2>What i do?</h2>
+    <p>I love programming, I always enjoy learning new thing in programming!</p>
+    <p>My goal is to keep on growing as an Developer</p>
+</section>
+
+
+
+{% endblock %}
