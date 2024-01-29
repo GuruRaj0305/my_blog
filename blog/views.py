@@ -2,12 +2,11 @@ from datetime import date
 from django.shortcuts import render
 from django.http import Http404
 
-# Create your views here.
-posts = [
+all_posts = [
     {
         "slug": "hike-in-the-mountains",
         "image": "mountains.jpg",
-        "author": "Maximilian",
+        "author": "Gururaj",
         "date": date(2021, 7, 21),
         "title": "Mountain Hiking",
         "excerpt": "There's nothing like the views you get when hiking in the mountains! And I wasn't even prepared for what happened whilst I was enjoying the view!",
@@ -27,8 +26,8 @@ posts = [
     },
     {
         "slug": "programming-is-fun",
-        "image": "coding.jpg",
-        "author": "Maximilian",
+        "image": "code.png",
+        "author": "Guru",
         "date": date(2022, 3, 10),
         "title": "Programming Is Great!",
         "excerpt": "Did you ever spend hours searching that one error in your code? Yep - that's what happened to me yesterday...",
@@ -49,7 +48,7 @@ posts = [
     {
         "slug": "into-the-woods",
         "image": "woods.jpg",
-        "author": "Maximilian",
+        "author": "Raj",
         "date": date(2020, 8, 5),
         "title": "Nature At Its Best",
         "excerpt": "Nature is amazing! The amount of inspiration I get when walking in nature is incredible!",
@@ -69,11 +68,28 @@ posts = [
     }
 ]
 
+def get_date(post):
+    return post['date']
+
+
+# Create your views here.
+
+
 def index(request):
-    return render(request, "blog/index.html")
+    sorted_posts = sorted(all_posts, key = get_date)
+    latest_posts = sorted_posts[-3:]
+    return render(request, "blog/index.html", {
+        "posts": latest_posts
+    })
 
 def posts(request):
-    return render(request, "blog/all-posts.html")
+    return render(request, "blog/all-posts.html",{
+        "all_posts": all_posts
+    })
 
 def post_detailed(request, slug):
-    return render(request, "blog/post-detail.html")
+    # post_identifier = next(post for post in all_posts if post['slug']==slug)
+    post_identifier = [post for post in all_posts if post['slug']==slug]
+    return render(request, "blog/post-detail.html", {
+        "post": post_identifier[0]
+    })

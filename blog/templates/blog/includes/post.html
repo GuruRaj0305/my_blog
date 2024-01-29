@@ -2,11 +2,11 @@
 
 <li>
     <article class = "post">
-        <a href = "{% url "posts-detailed-page" "the-mountains" %}">
-            <img src = "{% static "blog/images/mountains.jpg" %}" alt = "Mountain climing">
+        <a href = "{% url "posts-detailed-page" post.slug %}">
+            <img src = "{% static "blog/images/"|add:post.image %}" alt = "{{ post.title }}">
             <div class="post__content">
-                <h3>Mountain Hiking</h3>
-                <p>Sometimes when people say they're going to hike up a mountain, they mean that they are going to hike to its summit, but they might not be starting from the bottom. Depending on where the trailhead is, they might start climbing the mountain part-way up, perhaps because they're able to drive part of the way.</p>
+                <h3>{{ post.title}}</h3>
+                <p>{{ post.excerpt}}</p>
             </div>
         </a>
     </article>
