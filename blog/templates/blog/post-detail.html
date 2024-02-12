@@ -17,7 +17,7 @@
         {% endfor %}
     </div>
     <article>
-        <img src = {% static "blog/images/"|add:post.image_name %} alt = "mountain img"/>
+        <img src = {{ post.image.url }} alt = "mountain img"/>
         <address><a href="mailto:{{post.author.email}}">{{post.author}}</a></address>
         <div>
             Last update on <time>{{post.date|date:"M d, Y"}}</time>
