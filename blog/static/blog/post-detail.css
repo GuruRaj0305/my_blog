@@ -73,3 +73,114 @@ body {
     border-radius: 20px;
     padding: 5px;
   }
+
+
+  #comment-form {
+    margin: 3rem auto;
+    width: 90%;
+    max-width: 40rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.241);
+    padding: 1rem;
+
+  }
+
+  #comment-form button{
+    font: inherit;
+    background-color: #5706c0;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  #comment-form button:hover,
+  #comment-form button:active {
+    background-color: #7322dd;
+  }
+
+
+
+
+  .form-control{
+    margin-bottom: 1rem;
+  }
+
+  .form-control label{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-control input,
+  .form-control textarea{
+    display: block;
+    width : 100%;
+    padding: 0.5rem;
+    font: inherit;
+    border-radius: 6px;
+    border: 1px solid gray;
+  }
+
+  .errorlist {
+    list-style: none;
+    margin: 0.5rem 0;
+    padding: 0;
+    color: red;
+  }
+
+  .invalid label {
+    color: red;
+  }
+
+  .invalid input,
+  .invalid textarea {
+    border-color: red;
+    background-color: rgb(248, 218, 218);
+  }
+
+  #error-block {
+    margin: 8rem auto 3rem auto;
+    border: 1px solid red;
+    background-color: rgb(251, 202, 202);
+    padding: 1rem;
+    width: 90%;
+    max-width: 80rem;
+  }
+
+  #error-block a {
+    text-decoration: none;
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    padding: 0.25rem 1rem;
+  }
+
+  #comments {
+    margin: 3rem auto;
+    width: 90%;
+    max-width: 60rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    padding: 1rem 2rem;
+  }
+  
+  #comments ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #comments li {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  #comments li:last-of-type {
+    border-bottom: none;
+  }
+  
+  #comments h2 {
+    color: #464646;
+  }
