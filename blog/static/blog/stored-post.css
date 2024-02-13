@@ -1,0 +1,31 @@
+#main-navigation {
+    background-color: #390281;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  #stored-post {
+    margin: 8rem auto 3rem auto;
+    padding: 2rem;
+    border: 1px solid white;
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.825);
+    background-color: white;
+    width : 90%;
+    max-width: 40rem;
+  }
+
+  #stored-post ul {
+    list-style: none;
+
+  }
+  #stored-post li a{
+    display: block;
+    text-decoration: none;
+    margin: 2rem;
+
+  }
+
+  #stored-post li a:hover,
+  #stored-post li a:active{
+    color: rgb(0, 128, 255);
+  }
